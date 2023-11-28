@@ -1,0 +1,94 @@
+## application.yml
+#
+## Spring Boot Starter Web, Spring Data JPA, Thymeleaf
+#spring:
+#  profiles: default
+#  main:
+#    allow-bean-definition-overriding: true
+#  #datasource:
+#  #  driver-class-name: com.mysql.cj.jdbc.Driver
+#  #  url: jdbc:mysql://your-database-url:3306/your-database-name?serverTimezone=UTC&useSSL=false #설정맞게
+#  #  username: your-username #설정맞게
+#  #  password: your-password  #설정 맞게
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#  application:
+#    name: your-application-name
+#
+## Lombok
+#lombok:
+#  version: 1.18.22
+#
+## OpenCV
+#opencv:
+#  version: 4.5.1-1
+#
+## Retrofit
+#retrofit:
+#  version: 2.9.0
+#
+#spring.thymeleaf:
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html
+
+spring:
+  profiles: default
+  main:
+    allow-bean-definition-overriding: true
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://your-database-url:3306/your-database-name?serverTimezone=UTC&useSSL=false
+#    username: your-username
+#    password: your-password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        hbm2ddl:
+          auto: create
+        default_batch_fetch_size: 1000
+  application:
+    name: your-application-name
+
+lombok:
+  version: 1.18.22
+  annotations:
+    onX: lombok
+
+flask:
+  server:
+    url: https://19a4-61-98-214-251.ngrok-free.app/test
+
+opencv:
+  version: 4.5.1-1
+
+retrofit:
+  version: 2.9.0
+
+spring.thymeleaf:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework: INFO
+
+jpa:
+  properties:
+    hibernate:
+      format_sql: true
+      jdbc:
+        batch_size: 20
+      order_inserts: true
+      order_updates: true
