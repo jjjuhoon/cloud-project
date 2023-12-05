@@ -77,13 +77,15 @@ spring.thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
 
-server:
-  port: 8080
+#server:
+#  address: 0.0.0.0
+#  port: 8080
 
 logging:
   level:
     org.springframework: INFO
-
+#    root: DEBUG
+#    org.springframework.web: DEBUG
 jpa:
   properties:
     hibernate:
@@ -92,3 +94,12 @@ jpa:
         batch_size: 20
       order_inserts: true
       order_updates: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "loggers"
+server:
+  address: 0.0.0.0
+  port: 8080
